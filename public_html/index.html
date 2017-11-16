@@ -38,6 +38,10 @@
                 </div>
                 <div class="col-xs-2"></div>
             </div> 
+            
+            <div class="row" id="niveles">
+                
+            </div>
 
         </div>
 
@@ -49,7 +53,20 @@
     var contadorEstrellas = 0;
     
     var numeroVerbos = 0;
-    cambiaBotones();
+    iniciaPartida();
+    
+    function iniciaPartida(){
+        //tiene que mostrar algo para que se pueda elegir el numero de 
+        //verbos con el que se va a jugar
+        for (var i=1; i<11; i++){
+            $('#niveles').append('<div class="miniboton btn-group"> <button class="miniboton btn btn-large btn-primary" onclick="partida('+i*10+')"> '+i*10+'</button></div>');
+            
+        }
+        
+        
+        
+        cambiaBotones();
+    }
     
     $('#progreso').raty({
         readOnly    : true, 
